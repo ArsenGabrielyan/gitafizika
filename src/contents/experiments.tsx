@@ -5,6 +5,9 @@ import SelectorField from "@/components/fields/selector";
 import SiteLayout from "@/components/layout";
 import PaginationWithLinks from "@/components/pagination-with-links";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import { ShieldCheck } from "lucide-react";
 import { useState } from "react";
 
 export default function ExperimentsMainContent(){
@@ -67,6 +70,15 @@ export default function ExperimentsMainContent(){
                                         }
                                    ]}
                               />
+                              <div className="rounded-md shadow-xs border bg-background p-2 flex justify-between items-center flex-1 dark:bg-input/30 dark:hover:bg-input/50 border-input aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50">
+                                   <div className="flex items-center gap-2">
+                                        <ShieldCheck className="text-emerald-500 dark:text-emerald-400 size-4.5"/> 
+                                        <Label htmlFor="self-guided">
+                                             Միայն ինքնուրույն կատարվող
+                                        </Label>
+                                   </div>
+                                   <Switch/>
+                              </div>
                          </div>
                          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                               <ExperimentCard/>

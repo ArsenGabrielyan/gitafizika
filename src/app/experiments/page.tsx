@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import ExperimentsMainContent from "../contents/experiments"
+import ExperimentsMainContent from "../../contents/experiments"
 
 export const metadata: Metadata = {
      title: "Գիտական փորձեր"

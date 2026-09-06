@@ -11,7 +11,7 @@ export default function SiteFooter(){
                     <div className="flex items-center gap-2">
                          <Button variant="ghost" size="icon-lg" title="Դիտել մեզ YouTube-ում">
                               <Link href="https://www.youtube.com/playlist?list=PLSI6KSDJfq-J6OxBprsyMjWmmLym2o7T3" target="_blank" rel="noreferrer noopener nofollower">
-                                   <SiYoutube className="size-5"/>
+                                   <SiYoutube className="size-5 text-destructive"/>
                               </Link>
                          </Button>
                          <Button variant="ghost" size="icon-lg" title="Դիտել մեզ GitHub-ում">

@@ -1,4 +1,4 @@
-import SingleExperimentContent from "@/app/contents/single-experiment";
+import SingleExperimentContent from "@/contents/single-experiment";
 
 interface SingleExperimentPage{
   params: Promise<{slug: string}>
