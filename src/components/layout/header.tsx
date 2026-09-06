@@ -1,14 +1,16 @@
 "use client"
-import { ChevronDown, Globe } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { cn } from "cn";
 import ModeToggler from "../themes/toggler";
 import SearchPopup from "../search";
+import { useCurrentTheme } from "@/hooks/use-current-theme";
 
 export default function SiteHeader(){
      const [isScrolled, setIsScrolled] = useState(false);
+     const [isHovered, setIsHovered] = useState(false);
+     const currTheme = useCurrentTheme()
      useEffect(() => {
           const handleScroll = () => {
                setIsScrolled(window.scrollY > 20);
@@ -17,10 +19,14 @@ export default function SiteHeader(){
           window.addEventListener("scroll", handleScroll);
           return () => window.removeEventListener("scroll", handleScroll);
      }, []);
+     const logo = useMemo(()=>{
+          const logo = currTheme==="dark" ? "/logo-dark.png" : "/logo.png";
+          return isScrolled ? logo : "/logo-dark.png"
+     },[isScrolled, currTheme])
      return (
           <header className={cn("transition-[background-color,padding,box-shadow,border-color] duration-300 fixed top-0 left-0 w-full z-40 flex justify-center items-center px-7",isScrolled ? "bg-card/75 backdrop-blur-md text-card-foreground border-b shadow-md py-3.5" : "py-7")}>
                <nav className="max-w-360 flex justify-between items-center w-full">
-                    <Image src={isScrolled ? "/logo-accent.png" : "/logo-dark.png"} alt="logo" width={256} height={40}/>
+                    <Image src={isHovered ? "/logo-accent.png" : logo} alt="logo" width={256} height={40} onMouseEnter={()=>setIsHovered(true)} onMouseLeave={()=>setIsHovered(false)}/>
                     <ul className="flex items-center justify-center gap-2">
                          <li>
                               <Button variant={isScrolled ? "link" : "ghost"} className="text-base">
@@ -46,10 +52,6 @@ export default function SiteHeader(){
                     <div className="flex items-center gap-2">
                          <SearchPopup/>
                          <ModeToggler/>
-                         <Button variant="outline" title="Փոխել լեզուն">
-                              <Globe/>
-                              <ChevronDown/>
-                         </Button>
                     </div>
                </nav>
           </header>
