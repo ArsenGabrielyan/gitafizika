@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export { cn } from "cn"
 
 export const absoluteURL = (path?: string) => {
-     const url = process.env.NODE_ENV==="production" ? "http://localhost:3000" : "http://localhost:3000";
+     const url = process.env.NODE_ENV==="production" ? "https://gitafizika.vercel.app" : "http://localhost:3000";
      return !path ? url : `${url}${path}`
 }
 
