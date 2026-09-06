@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 import {SiYoutube, SiGithub} from "react-icons/si"
 
@@ -8,11 +9,15 @@ export default function SiteFooter(){
                <div className="w-full max-w-360 flex items-center justify-between gap-2">
                     <p>&copy; {year} | Բոլոր Իրավունքները պաշտպանված են</p>
                     <div className="flex items-center gap-2">
-                         <Button variant="ghost" size="icon-lg">
-                              <SiYoutube className="size-5"/>
+                         <Button variant="ghost" size="icon-lg" title="Դիտել մեզ YouTube-ում">
+                              <Link href="https://www.youtube.com/playlist?list=PLSI6KSDJfq-J6OxBprsyMjWmmLym2o7T3" target="_blank" rel="noreferrer noopener nofollower">
+                                   <SiYoutube className="size-5"/>
+                              </Link>
                          </Button>
-                         <Button variant="ghost" size="icon-lg">
-                              <SiGithub className="size-5"/>
+                         <Button variant="ghost" size="icon-lg" title="Դիտել մեզ GitHub-ում">
+                              <Link href="https://github.com/ArsenGabrielyan/gitafizika" target="_blank" rel="noreferrer noopener nofollower">
+                                   <SiGithub className="size-5"/>
+                              </Link>
                          </Button>
                     </div>
                </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutSection(){
      return (
-          <div className="w-full min-h-[50dvh] py-4 px-8 flex justify-center items-center">
+          <section className="w-full min-h-[50dvh] py-4 px-8 flex justify-center items-center scroll-mt-5" id="about">
                <div className="w-full max-w-360 grid grid-cols-2">
                     <Image src="/app-icon.png" alt="Scientific Crafts" width={300} height={300} className="object-contain rounded-lg"/>
                     <div className="space-y-4 w-full">
@@ -11,6 +11,6 @@ export default function AboutSection(){
                          <p>Նախագիծը սկիզբ է առել 2018 թվականին՝ որպես գիտական փորձերի տեսաշար, իսկ այժմ ընդլայնվում է նաև որպես ինտերակտիվ վեբ նախագիծ՝ փորձերը, բացատրությունները և ձևանմուշները մեկ վայրում հասանելի դարձնելու համար:</p>
                     </div>
                </div>
-          </div>
+          </section>
      )
 }
