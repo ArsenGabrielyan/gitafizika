@@ -1,8 +1,8 @@
 <p align="center">
       <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ArsenGabrielyan/gitafizika/refs/heads/main/.github/wordmark-dark.png" />
-            <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ArsenGabrielyan/gitafizika/refs/heads/main/.github/wordmark.png" />
-            <img src="https://raw.githubusercontent.com/ArsenGabrielyan/gitafizika/refs/heads/main/.github/wordmark.png" alt="Scientific Crafts" width="400" height="64"/>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ArsenGabrielyan/scientific-crafts/refs/heads/main/.github/wordmark-dark.png" />
+            <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ArsenGabrielyan/scientific-crafts/refs/heads/main/.github/wordmark.png" />
+            <img src="https://raw.githubusercontent.com/ArsenGabrielyan/scientific-crafts/refs/heads/main/.github/wordmark.png" alt="Scientific Crafts" width="400" height="64"/>
       </picture>
 </p>
 <h1 align="center">Contributing Scientific Crafts</h1>
@@ -60,8 +60,8 @@ feat: add bulk idea selection feature
 ## 📦 Development Setup
 1. Fork the repository and clone your fork:
       ```bash
-      git clone https://github.com/ArsenGabrielyan/gitafizika.git
-      cd gitafizika
+      git clone https://github.com/ArsenGabrielyan/scientific-crafts.git
+      cd scientific-crafts
       ```
 2. Install dependencies:
       ```bash
@@ -139,11 +139,11 @@ Take a deep breath, enjoy the process — and let’s make something beautiful t
 
 Thanks for making Scientific Crafts better!
 
-[armenian-base-json]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/i18n/hy
-[english-base-json]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/i18n/en
-[issues-url]: https://github.com/ArsenGabrielyan/gitafizika/issues
-[new-feature-request-url]: https://github.com/ArsenGabrielyan/gitafizika/issues/new?assignees=&labels=&template=feature_request.md&title=
-[code-of-conduct-url]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/CODE_OF_CONDUCT.md
+[armenian-base-json]: https://github.com/ArsenGabrielyan/scientific-crafts/blob/main/i18n/hy
+[english-base-json]: https://github.com/ArsenGabrielyan/scientific-crafts/blob/main/i18n/en
+[issues-url]: https://github.com/ArsenGabrielyan/scientific-crafts/issues
+[new-feature-request-url]: https://github.com/ArsenGabrielyan/scientific-crafts/issues/new?assignees=&labels=&template=feature_request.md&title=
+[code-of-conduct-url]: https://github.com/ArsenGabrielyan/scientific-crafts/blob/main/CODE_OF_CONDUCT.md
 
 > GitHub [@ArsenGabrielyan](https://github.com/ArsenGabrielyan)  · 
 > [Arsen's Website](https://arsen-2005.vercel.app)

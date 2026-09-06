@@ -1,14 +1,14 @@
 <p align="center">
-     <img src="https://raw.githubusercontent.com/ArsenGabrielyan/gitafizika/refs/heads/main/.github/logo-main.png" alt="Scientific Crafts" width="150" height="150"/>
+     <img src="https://raw.githubusercontent.com/ArsenGabrielyan/scientific-crafts/refs/heads/main/.github/logo-main.png" alt="Scientific Crafts" width="150" height="150"/>
 </p>
 <h1 align="center">Scientific Crafts</h1>
 <p align="center">A standalone science project featuring exciting experiments and templates that make physics, chemistry, STEM, and science more engaging.</p>
 <p align="center">
      <a href="https://gitafizika.vercel.app/">Visit Website</a>
      &nbsp;&middot;&nbsp;
-     <a href="https://github.com/ArsenGabrielyan/gitafizika/issues/new?assignees=&labels=&template=bug_report.md&title=">Report bug</a>
+     <a href="https://github.com/ArsenGabrielyan/scientific-crafts/issues/new?assignees=&labels=&template=bug_report.md&title=">Report bug</a>
      &nbsp;&middot;&nbsp;
-     <a href="https://github.com/ArsenGabrielyan/gitafizika/issues/new?assignees=&labels=&template=feature_request.md&title=">Request Feature</a>
+     <a href="https://github.com/ArsenGabrielyan/scientific-crafts/issues/new?assignees=&labels=&template=feature_request.md&title=">Request Feature</a>
 </p>
 
 ![Version][version-shield]
@@ -74,27 +74,27 @@ Distributed under the MIT License. See [LICENSE.md][license-url] for more inform
 > [Arsen's Website][personal-site-url]
 
 <!-- Markdown stats links -->
-[star-history-chart]: https://api.star-history.com/svg?repos=ArsenGabrielyan/gitafizika&type=Date
-[star-history-url]: https://api.star-history.com/svg?repos=ArsenGabrielyan/gitafizika&type=Date
-[contributors-shield]: https://img.shields.io/github/contributors/ArsenGabrielyan/gitafizika.svg?style=for-the-badge
-[contributors-url]: https://github.com/ArsenGabrielyan/gitafizika/graphs/contributors
-[top-contributors]: https://contrib.rocks/image?repo=ArsenGabrielyan/gitafizika
-[forks-shield]: https://img.shields.io/github/forks/ArsenGabrielyan/gitafizika.svg?style=for-the-badge
-[forks-url]: https://github.com/ArsenGabrielyan/gitafizika/network/members
-[stars-shield]: https://img.shields.io/github/stars/ArsenGabrielyan/gitafizika.svg?style=for-the-badge
-[stars-url]: https://github.com/ArsenGabrielyan/gitafizika/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ArsenGabrielyan/gitafizika.svg?style=for-the-badge
-[issues-url]: https://github.com/ArsenGabrielyan/gitafizika/issues
-[license-shield]: https://img.shields.io/github/license/ArsenGabrielyan/gitafizika?style=for-the-badge
-[license-url]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/LICENSE.md
-[created-at-shield]: https://img.shields.io/github/created-at/ArsenGabrielyan/gitafizika?style=for-the-badge
-[repo-size-shield]: https://img.shields.io/github/repo-size/ArsenGabrielyan/gitafizika?style=for-the-badge
-[code-of-conduct-url]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/CODE_OF_CONDUCT.md
-[contributing-url]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/CONTRIBUTING.md
-[changelog-url]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/CHANGELOG.md
+[star-history-chart]: https://api.star-history.com/svg?repos=ArsenGabrielyan/scientific-crafts&type=Date
+[star-history-url]: https://api.star-history.com/svg?repos=ArsenGabrielyan/scientific-crafts&type=Date
+[contributors-shield]: https://img.shields.io/github/contributors/ArsenGabrielyan/scientific-crafts.svg?style=for-the-badge
+[contributors-url]: https://github.com/ArsenGabrielyan/scientific-crafts/graphs/contributors
+[top-contributors]: https://contrib.rocks/image?repo=ArsenGabrielyan/scientific-crafts
+[forks-shield]: https://img.shields.io/github/forks/ArsenGabrielyan/scientific-crafts.svg?style=for-the-badge
+[forks-url]: https://github.com/ArsenGabrielyan/scientific-crafts/network/members
+[stars-shield]: https://img.shields.io/github/stars/ArsenGabrielyan/scientific-crafts.svg?style=for-the-badge
+[stars-url]: https://github.com/ArsenGabrielyan/scientific-crafts/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ArsenGabrielyan/scientific-crafts.svg?style=for-the-badge
+[issues-url]: https://github.com/ArsenGabrielyan/scientific-crafts/issues
+[license-shield]: https://img.shields.io/github/license/ArsenGabrielyan/scientific-crafts?style=for-the-badge
+[license-url]: https://github.com/ArsenGabrielyan/scientific-crafts/blob/main/LICENSE.md
+[created-at-shield]: https://img.shields.io/github/created-at/ArsenGabrielyan/scientific-crafts?style=for-the-badge
+[repo-size-shield]: https://img.shields.io/github/repo-size/ArsenGabrielyan/scientific-crafts?style=for-the-badge
+[code-of-conduct-url]: https://github.com/ArsenGabrielyan/scientific-crafts/blob/main/CODE_OF_CONDUCT.md
+[contributing-url]: https://github.com/ArsenGabrielyan/scientific-crafts/blob/main/CONTRIBUTING.md
+[changelog-url]: https://github.com/ArsenGabrielyan/scientific-crafts/blob/main/CHANGELOG.md
 [website-url]: https://gitafizika.vercel.app/
-[version-shield]: https://img.shields.io/github/package-json/v/ArsenGabrielyan/gitafizika?style=for-the-badge
-[vercel-stats-shield]: https://vercelbadge.vercel.app/api/ArsenGabrielyan/gitafizika?style=for-the-badge
+[version-shield]: https://img.shields.io/github/package-json/v/ArsenGabrielyan/scientific-crafts?style=for-the-badge
+[vercel-stats-shield]: https://vercelbadge.vercel.app/api/ArsenGabrielyan/scientific-crafts?style=for-the-badge
 
 <!-- Languages -->
 [nextjs-shield]: https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
