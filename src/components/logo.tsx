@@ -7,6 +7,6 @@ interface LogoProps{
 }
 export default function Logo({width = 500, height = 80}: LogoProps){
      return (
-          <Image src="/sci-accent.png" alt="logo" width={width} height={height}/>
+          <Image src="/logo-accent.png" alt="logo" width={width} height={height}/>
      )
 }
