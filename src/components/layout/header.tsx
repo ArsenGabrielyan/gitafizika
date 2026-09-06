@@ -1,10 +1,11 @@
 "use client"
-import { ChevronDown, Globe, Search } from "lucide-react";
+import { ChevronDown, Globe } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import { cn } from "cn";
 import ModeToggler from "../themes/toggler";
+import SearchPopup from "../search";
 
 export default function SiteHeader(){
      const [isScrolled, setIsScrolled] = useState(false);
@@ -43,9 +44,7 @@ export default function SiteHeader(){
                          </li>
                     </ul>
                     <div className="flex items-center gap-2">
-                         <Button variant="outline" size="icon" title="Որոնել">
-                              <Search/>
-                         </Button>
+                         <SearchPopup/>
                          <ModeToggler/>
                          <Button variant="outline" title="Փոխել լեզուն">
                               <Globe/>
