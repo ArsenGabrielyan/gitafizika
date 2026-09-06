@@ -18,7 +18,7 @@ export default function SiteHeader(){
           return () => window.removeEventListener("scroll", handleScroll);
      }, []);
      return (
-          <header className={cn("transition-all fixed top-0 left-0 w-full z-20 flex justify-center items-center px-7",isScrolled ? "bg-card text-card-foreground border-b shadow-md py-3.5" : "py-7")}>
+          <header className={cn("transition-[background-color,padding,box-shadow,border-color] duration-300 fixed top-0 left-0 w-full z-40 flex justify-center items-center px-7",isScrolled ? "bg-card/75 backdrop-blur-md text-card-foreground border-b shadow-md py-3.5" : "py-7")}>
                <nav className="max-w-360 flex justify-between items-center w-full">
                     <Image src={isScrolled ? "/logo-accent.png" : "/logo-dark.png"} alt="logo" width={256} height={40}/>
                     <ul className="flex items-center justify-center gap-2">
