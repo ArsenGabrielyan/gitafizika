@@ -2,7 +2,7 @@
       <picture>
             <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ArsenGabrielyan/gitafizika/refs/heads/main/.github/wordmark-dark.png" />
             <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ArsenGabrielyan/gitafizika/refs/heads/main/.github/wordmark.png" />
-            <img src="https://raw.githubusercontent.com/ArsenGabrielyan/gitafizika/refs/heads/main/.github/wordmark.png" alt="Calm Mood" width="400" height="64"/>
+            <img src="https://raw.githubusercontent.com/ArsenGabrielyan/gitafizika/refs/heads/main/.github/wordmark.png" alt="Scientific Crafts" width="400" height="64"/>
       </picture>
 </p>
 <h1 align="center">Contributing Scientific Crafts</h1>
