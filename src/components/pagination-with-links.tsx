@@ -58,7 +58,20 @@ export interface PaginationWithLinksProps {
   />
  * ```
  */
-export default function PaginationWithLinks({
+
+import { Suspense } from "react";
+
+export default function PaginationWithLinks(
+  props: PaginationWithLinksProps
+) {
+  return (
+    <Suspense fallback={null}>
+      <PaginationWithLinksInner {...props} />
+    </Suspense>
+  );
+}
+
+function PaginationWithLinksInner({
   pageSizeSelectOptions,
   pageSize,
   totalCount,

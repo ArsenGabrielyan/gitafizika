@@ -1,3 +1,4 @@
+"use client"
 import ExperimentCard from "@/components/cards/experiment";
 import SiteLayout from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
