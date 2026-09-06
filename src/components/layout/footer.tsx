@@ -15,7 +15,7 @@ export default function SiteFooter(){
                               </Link>
                          </Button>
                          <Button variant="ghost" size="icon-lg" title="Դիտել մեզ GitHub-ում">
-                              <Link href="https://github.com/ArsenGabrielyan/gitafizika" target="_blank" rel="noreferrer noopener nofollower">
+                              <Link href="https://github.com/ArsenGabrielyan/scientific-crafts" target="_blank" rel="noreferrer noopener nofollower">
                                    <SiGithub className="size-5"/>
                               </Link>
                          </Button>
