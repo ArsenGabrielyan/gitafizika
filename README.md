@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+     <img src="https://raw.githubusercontent.com/ArsenGabrielyan/gitafizika/refs/heads/main/.github/logo-main.png" alt="Scientific Crafts" width="150" height="150"/>
+</p>
+<h1 align="center">Scientific Crafts</h1>
+<p align="center">A standalone science project featuring exciting experiments and templates that make physics, chemistry, STEM, and science more engaging.</p>
+<p align="center">
+     <a href="https://gitafizika.vercel.app/">Visit Website</a>
+     &nbsp;&middot;&nbsp;
+     <a href="https://github.com/ArsenGabrielyan/gitafizika/issues/new?assignees=&labels=&template=bug_report.md&title=">Report bug</a>
+     &nbsp;&middot;&nbsp;
+     <a href="https://github.com/ArsenGabrielyan/gitafizika/issues/new?assignees=&labels=&template=feature_request.md&title=">Request Feature</a>
+</p>
 
-## Getting Started
+![Version][version-shield]
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
 
-First, run the development server:
+[![Issues][issues-shield]][issues-url]
+[![project_license][license-shield]][license-url]
+![GitHub Created At][created-at-shield]
+![GitHub repo size][repo-size-shield]
+![Vercel Deployment][vercel-stats-shield]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<details>
+     <summary>Table of Contents</summary>
+     <ol>
+          <li>
+               <a href="#about">About</a>
+               <ul>
+                    <li><a href="#built-with">Built with</a></li>
+               </ul>
+          </li>
+          <li><a href="#versioning">Versioning</a></li>
+          <li>
+               <a href="#contributing">Contributing</a>
+               <ul>
+                    <li><a href="#top-contributors">Top Contributors</a></li>
+               </ul>
+          </li>
+          <li><a href="#star-history">Star History</a></li>
+          <li><a href="#license">License</a></li>
+     </ol>
+</details>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
+**Scientific Crafts** (hy: **Գիտաֆիզիկա**) is a standalone science project created to make science engaging and accessible to general audiences through hands-on experiments. It features experiment videos, detailed guides, and downloadable templates covering physics, chemistry, STEM, and related topics.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Built with
+- [![Next JS][nextjs-shield]][nextjs-url]
+- [![ShadCN UI][shadcn-shield]][shadcn-url]
+- [![Tailwind CSS][tailwind-shield]][tailwind-url]
+- [![TypeScript][typescript-shield]][typescript-url]
+- [![Vercel][vercel-shield]][vercel-url]
+- [![React][react-shield]][react-url]
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Versioning
+This website follows [Semantic Versioning](https://semver.org/). You can view the full [Changelog][changelog-url] for details on each website version.
 
-## Learn More
+## Contributing
+Contributions are always welcome! Please read both [Code of Conduct][code-of-conduct-url] and [CONTRIBUTING.md][contributing-url] before contributing.
+### Top Contributors
+[![Top Contributors][top-contributors]][contributors-url]
 
-To learn more about Next.js, take a look at the following resources:
+## Star History
+[![Star History Chart][star-history-chart]][star-history-url]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
+Distributed under the MIT License. See [LICENSE.md][license-url] for more information.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> GitHub [@ArsenGabrielyan][github-url] &nbsp;&middot;&nbsp;
+> [Arsen's Website][personal-site-url]
 
-## Deploy on Vercel
+<!-- Markdown stats links -->
+[star-history-chart]: https://api.star-history.com/svg?repos=ArsenGabrielyan/gitafizika&type=Date
+[star-history-url]: https://api.star-history.com/svg?repos=ArsenGabrielyan/gitafizika&type=Date
+[contributors-shield]: https://img.shields.io/github/contributors/ArsenGabrielyan/gitafizika.svg?style=for-the-badge
+[contributors-url]: https://github.com/ArsenGabrielyan/gitafizika/graphs/contributors
+[top-contributors]: https://contrib.rocks/image?repo=ArsenGabrielyan/gitafizika
+[forks-shield]: https://img.shields.io/github/forks/ArsenGabrielyan/gitafizika.svg?style=for-the-badge
+[forks-url]: https://github.com/ArsenGabrielyan/gitafizika/network/members
+[stars-shield]: https://img.shields.io/github/stars/ArsenGabrielyan/gitafizika.svg?style=for-the-badge
+[stars-url]: https://github.com/ArsenGabrielyan/gitafizika/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ArsenGabrielyan/gitafizika.svg?style=for-the-badge
+[issues-url]: https://github.com/ArsenGabrielyan/gitafizika/issues
+[license-shield]: https://img.shields.io/github/license/ArsenGabrielyan/gitafizika?style=for-the-badge
+[license-url]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/LICENSE.md
+[created-at-shield]: https://img.shields.io/github/created-at/ArsenGabrielyan/gitafizika?style=for-the-badge
+[repo-size-shield]: https://img.shields.io/github/repo-size/ArsenGabrielyan/gitafizika?style=for-the-badge
+[code-of-conduct-url]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/CODE_OF_CONDUCT.md
+[contributing-url]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/CONTRIBUTING.md
+[changelog-url]: https://github.com/ArsenGabrielyan/gitafizika/blob/main/CHANGELOG.md
+[website-url]: https://gitafizika.vercel.app/
+[version-shield]: https://img.shields.io/github/package-json/v/ArsenGabrielyan/gitafizika?style=for-the-badge
+[vercel-stats-shield]: https://vercelbadge.vercel.app/api/ArsenGabrielyan/gitafizika?style=for-the-badge
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<!-- Languages -->
+[nextjs-shield]: https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[nextjs-url]: https://nextjs.org/
+[shadcn-shield]: https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white
+[shadcn-url]: https://ui.shadcn.com/
+[tailwind-shield]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[tailwind-url]: https://tailwindcss.com/
+[typescript-shield]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
+[typescript-url]: https://www.typescriptlang.org
+[vercel-shield]: https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white
+[vercel-url]: https://vercel.com/
+[react-shield]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
+[react-url]: https://react.dev/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<!-- External Links -->
+[github-url]: https://github.com/ArsenGabrielyan
+[personal-site-url]: https://arsen-2005.vercel.app
