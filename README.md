@@ -46,6 +46,8 @@
 ## About
 **Scientific Crafts** (hy: **Գիտաֆիզիկա**) is a standalone science project created to make science engaging and accessible to general audiences through hands-on experiments. It features experiment videos, detailed guides, and downloadable templates covering physics, chemistry, STEM, and related topics.
 
+The project began in 2018 as a video series of science experiments, and is now expanding into an interactive web project to make experiments, explanations, and templates available in one place.
+
 ### Built with
 - [![Next JS][nextjs-shield]][nextjs-url]
 - [![ShadCN UI][shadcn-shield]][shadcn-url]
