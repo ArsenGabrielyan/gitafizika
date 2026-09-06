@@ -1,10 +1,19 @@
-import Logo from "@/components/logo";
+import SiteFooter from "@/components/layout/footer";
+import SiteHeader from "@/components/layout/header";
+import AboutSection from "@/section/about";
+import ExperimentsSection from "@/section/experiments";
+import HeroSection from "@/section/hero";
+import TemplatesSection from "@/section/templates";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center flex-col gap-2 w-full h-dvh">
-      <Logo/>
-      <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-primary">Շուտով</h1>
-    </div>
+    <>
+      <SiteHeader/>
+      <HeroSection/>
+      <AboutSection/>
+      <ExperimentsSection/>
+      <TemplatesSection/>
+      <SiteFooter/>
+    </>
   );
 }
