@@ -32,22 +32,22 @@ export default function SiteHeader(){
                     </Link>
                     <ul className="flex items-center justify-center gap-2">
                          <li>
-                              <Button variant={isScrolled ? "link" : "ghost"} className="text-base">
+                              <Button variant={isScrolled ? "link" : "ghost"} className="text-base" asChild>
                                    <Link href="/#hero">Գլխավոր</Link>
                               </Button>
                          </li>
                          <li>
-                              <Button variant={isScrolled ? "link" : "ghost"} className="text-base">
+                              <Button variant={isScrolled ? "link" : "ghost"} className="text-base" asChild>
                                    <Link href="/#about">Մեր Մասին</Link>
                               </Button>
                          </li>
                          <li>
-                              <Button variant={isScrolled ? "link" : "ghost"} className="text-base">
+                              <Button variant={isScrolled ? "link" : "ghost"} className="text-base" asChild>
                                    <Link href="/#experiments">Գիտական Փորձեր</Link>
                               </Button>
                          </li>
                          <li>
-                              <Button variant={isScrolled ? "link" : "ghost"} className="text-base">
+                              <Button variant={isScrolled ? "link" : "ghost"} className="text-base" asChild>
                                    <Link href="/#templates">Շաբլոններ</Link>
                               </Button>
                          </li>

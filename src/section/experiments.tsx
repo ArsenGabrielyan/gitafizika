@@ -13,7 +13,7 @@ export default function ExperimentsSection(){
                          <ExperimentCard/>
                          <ExperimentCard/>
                     </div>
-                    <Button size="lg" variant="outline">
+                    <Button size="lg" variant="outline" asChild>
                          <Link href="/experiments">Մանրամասն</Link>
                     </Button>
                </div>

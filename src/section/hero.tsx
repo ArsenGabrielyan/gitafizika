@@ -11,12 +11,12 @@ export default function HeroSection(){
                     <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold">Գիտաֆիզիկա</h1>
                     <p className="text-lg text-muted-foreground">Ուսումնասիրեք գիտության, ֆիզիկայի, քիմիայի և ԳՏՃՄ-ի մասին ավելի մանրամասն։</p>
                     <div className="flex items-center gap-2">
-                         <Button>
+                         <Button asChild>
                               <Link href="/#about">Իմանալ ավելին</Link>
                          </Button>
-                         <Button variant="secondary">
-                              <PlayCircle/>
+                         <Button variant="secondary" asChild>
                               <Link href="https://youtube.com/playlist?list=PLSI6KSDJfq-J6OxBprsyMjWmmLym2o7T3" target="_blank" rel="noopener noreferrer nofollower">
+                                   <PlayCircle/>
                                    Դիտել Փլեյլիստը
                               </Link>
                          </Button>

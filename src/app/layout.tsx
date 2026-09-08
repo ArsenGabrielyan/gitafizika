@@ -44,9 +44,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
+      suppressHydrationWarning
       lang="hy"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, geistHeading.variable)}
-      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider

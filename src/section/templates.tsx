@@ -16,7 +16,7 @@ export default function TemplatesSection({templates}: TemplatesSectionProps){
                               <TemplateCard key={template.slug} data={template}/>
                          ))}
                     </div>
-                    <Button size="lg" variant="outline">
+                    <Button size="lg" variant="outline" asChild>
                          <Link href="/templates">Մանրամասն</Link>
                     </Button>
                </div>

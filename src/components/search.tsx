@@ -23,7 +23,7 @@ export default function SearchPopup(){
      }
      return (
           <Popover>
-               <PopoverTrigger>
+               <PopoverTrigger asChild>
                     <Button variant="outline" size="icon" title="Որոնել">
                          <Search/>
                     </Button>

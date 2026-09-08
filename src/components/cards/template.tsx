@@ -27,9 +27,11 @@ export default function TemplateCard({data}: TemplateCardProps){
                     <CardTitle>{data.title}</CardTitle>
                </CardHeader>
                <CardFooter>
-                    <Button className="w-full" render={<Link href={absoluteCDN(data.file)} download={data.slug}/>}>
-                         <Download/>
-                         Ներբեռնել
+                    <Button className="w-full" asChild>
+                         <Link href={absoluteCDN(data.file)} download={data.slug}>
+                              <Download/>
+                              Ներբեռնել
+                         </Link>
                     </Button>
                </CardFooter>
           </Card>
