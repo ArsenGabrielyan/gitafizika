@@ -1,0 +1,34 @@
+[
+     {
+          "slug": "hologram",
+          "title": "Հոլոգրամ",
+          "file": "/pdf/hologram.pdf",
+          "thumbnail": "/thumbnails/hologram.webp",
+          "categories": ["physics", "optical-illusion"],
+          "pages": 1
+     },
+     {
+          "slug": "spinning-illusion",
+          "title": "Պտտվող պատրանք",
+          "file": "/pdf/spinning-illusion.pdf",
+          "thumbnail": "/thumbnails/spinning-illusion.webp",
+          "categories": ["physics", "optical-illusion"],
+          "pages": 3
+     },
+     {
+          "slug": "paper-helicopter",
+          "title": "Թղթե ուղղաթիռ",
+          "file": "/pdf/paper-helicopter.pdf",
+          "thumbnail": "/thumbnails/paper-helicopter.webp",
+          "categories": ["physics", "aerodynamics"],
+          "pages": 1
+     },
+     {
+          "slug": "soap-boat",
+          "title": "Պտտվող պատրանք",
+          "file": "/pdf/soap-boat.pdf",
+          "thumbnail": "/thumbnails/soap-boat.webp",
+          "categories": ["physics","fluid mechanics","surface chemistry"],
+          "pages": 1
+     }
+]
