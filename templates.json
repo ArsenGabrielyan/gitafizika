@@ -25,10 +25,10 @@
      },
      {
           "slug": "soap-boat",
-          "title": "Պտտվող պատրանք",
+          "title": "Թղթե նավակ",
           "file": "/pdf/soap-boat.pdf",
           "thumbnail": "/thumbnails/soap-boat.webp",
-          "categories": ["physics","fluid mechanics","surface chemistry"],
+          "categories": ["fluid mechanics","surface chemistry"],
           "pages": 1
      }
 ]
