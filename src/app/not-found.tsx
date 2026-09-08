@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+     title: "Վայ... Էջը չի գտնվել"
+}
 export default function NotFound(){
      return (
           <div className="p-5 flex justify-center items-center flex-col min-h-screen space-y-3">

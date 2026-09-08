@@ -3,21 +3,31 @@ import { Search } from "lucide-react";
 import { Button } from "./ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { ButtonGroup } from "./ui/button-group";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
-import * as z from "zod"
 import SearchField from "./fields/search";
-
-export const SearchSchema = z.object({
-     query: z.string().max(200,"Որոնման հարցումը շատ երկար է").trim()
-})
+import { SearchSchema } from "@/lib/schemas";
+import { SearchType } from "@/lib/types/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 export default function SearchPopup(){
-     const [input, setInput] = useState("")
      const router = useRouter();
-     function handleSearch() {
-          const query = input.trim();
-          if (!query) return;
+     const form = useForm<SearchType>({
+          resolver: zodResolver(SearchSchema),
+          defaultValues: {
+               query: ""
+          }
+     })
+     const onSubmit = (values: SearchType) => {
+          const validatedFields = SearchSchema.safeParse(values);
+          if(!validatedFields.success) {
+               toast.error("Դաշտերը վավերացված չեն",{
+                    description: validatedFields.error.message
+               });
+               return;
+          }
+          const {query} = validatedFields.data;
           const params = new URLSearchParams({ query });
           router.push(`/experiments?${params.toString()}`);
      }
@@ -29,17 +39,24 @@ export default function SearchPopup(){
                     </Button>
                </PopoverTrigger>
                <PopoverContent>
-                    <ButtonGroup>
-                         <SearchField
-                              placeholder="Որոնել"
-                              value={input}
-                              onChange={e=>setInput(e.target.value)}
-                              onClearSearch={()=>setInput("")}
-                         />
-                         <Button onClick={handleSearch} disabled={!input.trim()}>
-                              <Search />
-                         </Button>
-                    </ButtonGroup>
+                    <form onSubmit={form.handleSubmit(onSubmit)}>
+                         <ButtonGroup>
+                              <Controller
+                                   control={form.control}
+                                   name="query"
+                                   render={({field})=>(
+                                        <SearchField
+                                             {...field}
+                                             placeholder="Որոնել"
+                                             onClearSearch={()=>form.reset()}
+                                        />
+                                   )}
+                              />
+                              <Button type="submit" disabled={!form.formState.isValid || form.formState.isSubmitting}>
+                                   <Search />
+                              </Button>
+                         </ButtonGroup>
+                    </form>
                </PopoverContent>
           </Popover>
      )

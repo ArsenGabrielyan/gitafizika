@@ -13,7 +13,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Paper Helicopter
 - Paper Soap-Powered boat
 ### Improved
-- Templates Page - Added working pagination
+- Templates Page - Added working pagination and filtering
+- Search Popup - Improved the submission logic
 
 ## 0.1.0 - 2026-09-06
 ### Added UI
