@@ -9,7 +9,6 @@ import { SearchSchema } from "@/lib/schemas";
 import { SearchType } from "@/lib/types/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
-import { toast } from "sonner";
 
 export default function SearchPopup(){
      const router = useRouter();
@@ -17,17 +16,10 @@ export default function SearchPopup(){
           resolver: zodResolver(SearchSchema),
           defaultValues: {
                query: ""
-          }
+          },
+          mode: "onChange"
      })
-     const onSubmit = (values: SearchType) => {
-          const validatedFields = SearchSchema.safeParse(values);
-          if(!validatedFields.success) {
-               toast.error("Դաշտերը վավերացված չեն",{
-                    description: validatedFields.error.message
-               });
-               return;
-          }
-          const {query} = validatedFields.data;
+     const onSubmit = ({query}: SearchType) => {
           const params = new URLSearchParams({ query });
           router.push(`/experiments?${params.toString()}`);
      }

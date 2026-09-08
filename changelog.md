@@ -8,27 +8,28 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Added
 - Templates support
 - Empty component for templates as a fallback state
+- Working Search Popup
 ### Added Templates
 - Hologram
 - Spinning Illusions
 - Paper Helicopter
 - Paper Soap-Powered boat
-### Improved
-- Templates Page - Added working pagination and filtering
-- Search Popup - Improved the submission logic
+### Changed
+- Migrated from Base UI to Radix UI
+- Added working pagination and filtering on the templates page
 
 ## 0.1.0 - 2026-09-06
-### Added UI
+### Added
 - Header
 - Footer
 - Hero Section
 - About Section
-- Search Popup
-- Experiments Section
-- Templates Section
-- Experiments page
-- Templates page
-- Single experiment page
 - Not Found page
-### Initialized
 - Theme support
+### Initialized UI
+- Search Popup
+- Templates Section
+- Templates page
+- Experiments Section
+- Experiments page
+- Single experiment page
