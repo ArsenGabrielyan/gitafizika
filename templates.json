@@ -28,7 +28,7 @@
           "title": "Թղթե նավակ",
           "file": "/pdf/soap-boat.pdf",
           "thumbnail": "/thumbnails/soap-boat.webp",
-          "categories": ["fluid mechanics","surface chemistry"],
+          "categories": ["fluid-mechanics","surface-chemistry"],
           "pages": 1
      }
 ]
