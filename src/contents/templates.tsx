@@ -3,10 +3,14 @@ import SiteLayout from "@/components/layout"
 import PaginationWithLinks from "@/components/pagination-with-links"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
-import TemplateCard from "@/components/cards/template"
 import SearchField from "@/components/fields/search"
+import { Template } from "@/lib/types"
+import TemplatesList from "@/components/lists/templates"
 
-export default function TemplatesMainContent(){
+interface TemplatesMainContentProps{
+     templates: Template[]
+}
+export default function TemplatesMainContent({templates}: TemplatesMainContentProps){
      const [input, setInput] = useState("")
      return (
           <SiteLayout>
@@ -31,16 +35,7 @@ export default function TemplatesMainContent(){
                </section>
                <section className="w-full py-4 px-8 flex justify-center items-center scroll-mt-10">
                     <div className="w-full max-w-360 space-y-4">
-                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                              <TemplateCard/>
-                              <TemplateCard/>
-                              <TemplateCard/>
-                              <TemplateCard/>
-                              <TemplateCard/>
-                              <TemplateCard/>
-                              <TemplateCard/>
-                              <TemplateCard/>
-                         </div>
+                         <TemplatesList templates={templates}/>
                          <PaginationWithLinks
                               totalCount={32}
                               pageSize={8}

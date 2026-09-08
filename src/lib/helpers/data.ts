@@ -1,7 +1,10 @@
 import { Template } from "../types";
 import { absoluteCDN, getErrorMessage } from "../utils"
 
-export const getTemplatesFromCDN = async () => {
+export const getTemplatesFromCDN = async (): Promise<{
+     data: Template[],
+     error?: string
+}> => {
      try {
           const res = await fetch(absoluteCDN("/templates.json"));
           if(!res.ok) return {error: "Չհաջողվեց բեռնել շաբլոնների ցուցակը", data: []}
