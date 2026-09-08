@@ -11,7 +11,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Hologram
 - Spinning Illusions
 - Paper Helicopter
-- Paper Soap-powered boat
+- Paper Soap-Powered boat
+### Improved
+- Templates Page - Added working pagination
 
 ## 0.1.0 - 2026-09-06
 ### Added UI

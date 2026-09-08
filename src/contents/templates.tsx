@@ -2,16 +2,24 @@
 import SiteLayout from "@/components/layout"
 import PaginationWithLinks from "@/components/pagination-with-links"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import SearchField from "@/components/fields/search"
 import { Template } from "@/lib/types"
 import TemplatesList from "@/components/lists/templates"
+import { toast } from "sonner"
 
 interface TemplatesMainContentProps{
-     templates: Template[]
+     templates: Template[],
+     totalTemplates: number,
+     pageSize?: number,
+     currPage?: number,
+     error?: string,
 }
-export default function TemplatesMainContent({templates}: TemplatesMainContentProps){
+export default function TemplatesMainContent({templates, totalTemplates, pageSize, currPage, error}: TemplatesMainContentProps){
      const [input, setInput] = useState("")
+     useEffect(() => {
+          if (error) toast.error(error);
+     }, [error]);
      return (
           <SiteLayout>
                <section className="w-full min-h-[64dvh] flex items-center justify-center bg-radial-[at_6%_4%] from-[#0069a8] via-background to-background">
@@ -37,12 +45,12 @@ export default function TemplatesMainContent({templates}: TemplatesMainContentPr
                     <div className="w-full max-w-360 space-y-4">
                          <TemplatesList templates={templates}/>
                          <PaginationWithLinks
-                              totalCount={32}
-                              pageSize={8}
-                              page={1}
+                              totalCount={totalTemplates}
+                              pageSize={pageSize ?? 8}
+                              page={currPage ?? 1}
                               navigationMode="router"
                               pageSizeSelectOptions={{
-                                   pageSizeOptions: [8,16,24]
+                                   pageSizeOptions: [4,8,16,24]
                               }}
                          />
                     </div>
