@@ -16,7 +16,7 @@ export default function TemplateCard({data}: TemplateCardProps){
                <Image
                     src={absoluteCDN(data.thumbnail)}
                     alt={data.slug}
-                    className="aspect-retro-vertical w-full object-cover brightness-95 dark:brightness-80"
+                    className="aspect-retro-vertical w-full object-cover brightness-95"
                     width={1280}
                     height={720}
                />

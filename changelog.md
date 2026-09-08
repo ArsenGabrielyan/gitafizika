@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## 0.2.0 - 2026-09-08
 ### Added
 - Templates support
+- Empty component for templates as a fallback state
 ### Added Templates
 - Hologram
 - Spinning Illusions
