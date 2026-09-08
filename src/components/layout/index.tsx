@@ -1,3 +1,4 @@
+import { Toaster } from "../ui/sonner";
 import SiteFooter from "./footer";
 import SiteHeader from "./header";
 
@@ -12,6 +13,7 @@ export default function SiteLayout({children}: SiteLayoutProps){
                {children}
           </main>
           <SiteFooter/>
+          <Toaster richColors/>
           </>
      )
 }

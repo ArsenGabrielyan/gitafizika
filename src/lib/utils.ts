@@ -12,3 +12,11 @@ export function createMetaAlternates(url?: string): Metadata["alternates"] {
           canonical: absoluteURL(url)
      }
 }
+
+export const absoluteCDN = (filePath?: string) => `https://arsengabrielyan.github.io/scientific-crafts${filePath}`
+
+export function getErrorMessage(err: unknown){
+     const stringErr = String(err);
+     const fallback = stringErr.trim()==="" ? "Ինչ-որ բան սխալ գնաց" : stringErr
+     return err instanceof Error ? err.message : String(err) ?? fallback
+}

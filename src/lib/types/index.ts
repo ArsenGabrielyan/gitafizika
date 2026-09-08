@@ -6,3 +6,12 @@ export interface SelectType{
      Icon?: LucideIcon,
      disabled?: boolean
 }
+
+export interface Template {
+     slug: string;
+     title: string;
+     file: string;
+     thumbnail: string;
+     categories: string[];
+     pages: number;
+}
