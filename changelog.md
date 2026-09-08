@@ -4,6 +4,10 @@ All notable changes to Scientific Crafts will be documented here.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## 0.3.0 - Unreleased
+### Initialized
+- MDX support
+
 ## 0.2.0 - 2026-09-08
 ### Added
 - Templates support

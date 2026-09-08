@@ -1,5 +1,5 @@
 import MainContent from "@/contents/main";
-import { getTemplatesFromCDN } from "@/lib/helpers/data";
+import { getTemplatesFromCDN } from "@/lib/helpers/templates";
 import { toast } from "sonner";
 
 export const revalidate = 3600;

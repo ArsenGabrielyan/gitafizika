@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import TemplatesMainContent from "../../contents/templates";
-import { getTemplatesFromCDN } from "@/lib/helpers/data";
+import { getTemplatesFromCDN } from "@/lib/helpers/templates";
 import { FilterName } from "@/lib/types";
 import { FILTER_NAMES } from "@/lib/constants/filters";
 
