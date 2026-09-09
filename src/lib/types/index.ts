@@ -24,3 +24,14 @@ export interface IBlockquoteBox{
      Icon: LucideIcon,
      iconClass: string
 }
+export interface ExperimentMetadata {
+     title: string
+     description: string
+     thumbnail: string
+     categories: FilterName[]
+     tags: string[]
+     difficulty: "starter" | "intermediate" | "master"
+     duration: "short" | "medium" | "long"
+     selfGuided: boolean
+     requirements: string[]
+}
