@@ -36,4 +36,5 @@ export interface ExperimentMetadata {
      requirements: string[]
      date: string
      editDate?: string
+     videoUrl?: string
 }
