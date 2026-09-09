@@ -34,4 +34,6 @@ export interface ExperimentMetadata {
      duration: "short" | "medium" | "long"
      selfGuided: boolean
      requirements: string[]
+     date: string
+     editDate?: string
 }
