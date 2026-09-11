@@ -6,13 +6,14 @@ import HeroSection from "@/section/hero";
 import TemplatesSection from "@/section/templates";
 import { useEffect } from "react";
 import { toast } from "sonner";
-import { Template } from "@/lib/types";
+import { ExperimentMetadata, Template } from "@/lib/types";
 
 interface MainContentProps{
      templates: Template[],
-     error?: string
+     error?: string,
+     experiments: ExperimentMetadata[]
 }
-export default function MainContent({templates, error}: MainContentProps){
+export default function MainContent({templates, error, experiments}: MainContentProps){
      useEffect(() => {
           if (error) toast.error(error);
      }, [error]);
@@ -20,7 +21,7 @@ export default function MainContent({templates, error}: MainContentProps){
           <SiteLayout>
                <HeroSection/>
                <AboutSection/>
-               <ExperimentsSection/>
+               <ExperimentsSection experiments={experiments}/>
                <TemplatesSection templates={templates}/>
           </SiteLayout>
      )

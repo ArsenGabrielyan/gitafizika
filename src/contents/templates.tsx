@@ -36,54 +36,37 @@ export default function TemplatesMainContent({
 }: TemplatesMainContentProps) {
      const router = useRouter()
      const pathname = usePathname()
-
      const [input, setInput] = useState(initialQuery || "")
-     const [currFilter, setCurrFilter] = useState<"all" | FilterName>(
-          initialCategory || "all"
-     )
-
+     const [currFilter, setCurrFilter] = useState<"all" | FilterName>(initialCategory || "all")
      useEffect(() => {
           if (error) toast.error(error)
      }, [error])
-
      function handleSearch(value: string) {
           setInput(value)
-
-          // Preserve ALL existing params.
           const params = new URLSearchParams(window.location.search)
-
           params.set("page", "1")
-
           if (value.trim()) {
                params.set("query", value.trim())
           } else {
                params.delete("query")
           }
-
           router.replace(`${pathname}?${params.toString()}`, {
                scroll: false
           })
      }
-
      function handleFilter(filter: "all" | FilterName) {
           setCurrFilter(filter)
-
-          // Preserve query, pageSize, and any future params.
           const params = new URLSearchParams(window.location.search)
-
           params.set("page", "1")
-
           if (filter === "all") {
                params.delete("category")
           } else {
                params.set("category", filter)
           }
-
           router.push(`${pathname}?${params.toString()}`, {
                scroll: false
           })
      }
-
      return (
           <SiteLayout>
                <section className="w-full min-h-[60dvh] flex items-center justify-center bg-radial-[at_6%_4%] from-[#0069a8] via-background to-background">
@@ -91,11 +74,9 @@ export default function TemplatesMainContent({
                          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold">
                               Շաբլոններ
                          </h1>
-
                          <p className="text-lg text-muted-foreground">
                               Հատուկ շաբլոններ՝ փորձեր անելու համար
                          </p>
-
                          <SearchField
                               placeholder="Որոնել"
                               value={input}
@@ -103,7 +84,6 @@ export default function TemplatesMainContent({
                               onClearSearch={() => handleSearch("")}
                               groupClassName="bg-background/50"
                          />
-
                          <div className="flex items-center gap-2">
                               <Button
                                    variant={currFilter === "all" ? "default" : "outline"}
@@ -111,10 +91,8 @@ export default function TemplatesMainContent({
                               >
                                    Բոլորը ({allCount})
                               </Button>
-
                               {Object.entries(FILTER_NAMES).map(([key, value]) => {
                                    const filter = key as FilterName
-
                                    return (
                                         <Button
                                              key={filter}
@@ -128,11 +106,9 @@ export default function TemplatesMainContent({
                          </div>
                     </div>
                </section>
-
                <section className="w-full py-4 px-8 flex justify-center items-center scroll-mt-10">
                     <div className="w-full max-w-360 space-y-4">
                          <TemplatesList templates={templates} />
-
                          <PaginationWithLinks
                               totalCount={totalResults}
                               pageSize={pageSize}

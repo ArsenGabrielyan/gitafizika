@@ -7,11 +7,63 @@ import PaginationWithLinks from "@/components/pagination-with-links";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { FILTER_NAMES } from "@/lib/constants/filters";
+import { ExperimentMetadata, FilterName } from "@/lib/types";
 import { ShieldCheck } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function ExperimentsMainContent(){
-     const [input, setInput] = useState("")
+interface ExperimentsMainContentProps {
+     initialQuery?: string
+     initialCategory?: FilterName
+     experiments: ExperimentMetadata[]
+     pageSize: number
+     currPage: number
+     categoryCounts: Record<FilterName, number>
+     totalResults: number
+     allCount: number
+     
+}
+export default function ExperimentsMainContent({
+     experiments,
+     pageSize,
+     currPage,
+     categoryCounts,
+     totalResults,
+     allCount,
+     initialQuery,
+     initialCategory
+}: ExperimentsMainContentProps){
+     const router = useRouter()
+     const pathname = usePathname()
+     const [input, setInput] = useState(initialQuery || "")
+     const [currFilter, setCurrFilter] = useState<"all" | FilterName>(initialCategory || "all")
+     function handleSearch(value: string) {
+          setInput(value)
+          const params = new URLSearchParams(window.location.search)
+          params.set("page", "1")
+          if (value.trim()) {
+               params.set("query", value.trim())
+          } else {
+               params.delete("query")
+          }
+          router.replace(`${pathname}?${params.toString()}`, {
+               scroll: false
+          })
+     }
+     function handleFilter(filter: "all" | FilterName) {
+          setCurrFilter(filter)
+          const params = new URLSearchParams(window.location.search)
+          params.set("page", "1")
+          if (filter === "all") {
+               params.delete("category")
+          } else {
+               params.set("category", filter)
+          }
+          router.push(`${pathname}?${params.toString()}`, {
+               scroll: false
+          })
+     }
      return (
           <SiteLayout>
                <section className="w-full min-h-[64dvh] flex items-center justify-center bg-radial-[at_6%_4%] from-[#0069a8] via-background to-background">
@@ -21,15 +73,29 @@ export default function ExperimentsMainContent(){
                          <SearchField
                               placeholder="Որոնել"
                               value={input}
-                              onChange={e=>setInput(e.target.value)}
-                              onClearSearch={()=>setInput("")}
+                              onChange={e => handleSearch(e.target.value)}
+                              onClearSearch={() => handleSearch("")}
                               groupClassName="bg-background/50"
                          />
                          <div className="flex items-center gap-2">
-                              <Button>Բոլորը (10)</Button>
-                              <Button variant="secondary">Ֆիզիկա (5)</Button>
-                              <Button variant="secondary">Քիմիա (2)</Button>
-                              <Button variant="secondary">Ճարտարապետություն (3)</Button>
+                              <Button
+                                   variant={currFilter === "all" ? "default" : "outline"}
+                                   onClick={() => handleFilter("all")}
+                              >
+                                   Բոլորը ({allCount})
+                              </Button>
+                              {Object.entries(FILTER_NAMES).map(([key, value]) => {
+                                   const filter = key as FilterName
+                                   return (
+                                        <Button
+                                             key={filter}
+                                             variant={currFilter === filter ? "default" : "outline"}
+                                             onClick={() => handleFilter(filter)}
+                                        >
+                                             {value} ({categoryCounts[filter]})
+                                        </Button>
+                                   )
+                              })}
                          </div>
                     </div>
                </section>
@@ -80,14 +146,14 @@ export default function ExperimentsMainContent(){
                                    <Switch/>
                               </div>
                          </div>
-                         <ExperimentsList experiments={[]}/>
+                         <ExperimentsList experiments={experiments}/>
                          <PaginationWithLinks
-                              totalCount={32}
-                              pageSize={8}
-                              page={1}
+                              totalCount={totalResults}
+                              pageSize={pageSize}
+                              page={currPage}
                               navigationMode="router"
                               pageSizeSelectOptions={{
-                                   pageSizeOptions: [8,16,24,32,48]
+                                   pageSizeOptions: [4,8,16,24,32,48]
                               }}
                          />
                     </div>

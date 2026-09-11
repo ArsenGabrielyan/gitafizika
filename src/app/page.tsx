@@ -1,13 +1,17 @@
 import MainContent from "@/contents/main";
+import { getAllExperiments } from "@/lib/helpers/experiments";
 import { getTemplatesFromCDN } from "@/lib/helpers/templates";
-import { toast } from "sonner";
 
 export const revalidate = 3600;
 
 export default async function Home() {
   const templates = await getTemplatesFromCDN()
-  if(templates.error) toast.error(templates.error)
+  const experiments = await getAllExperiments()
   return (
-    <MainContent templates={templates.data} error={templates.error}/>
+    <MainContent
+      templates={templates.data}
+      error={templates.error}
+      experiments={experiments.slice(0,8)}
+    />
   );
 }
