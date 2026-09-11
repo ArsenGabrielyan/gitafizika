@@ -7,6 +7,7 @@ import PaginationWithLinks from "@/components/pagination-with-links";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { DIFFICULTIES, DURATIONS } from "@/lib/constants";
 import { FILTER_NAMES } from "@/lib/constants/filters";
 import { ExperimentMetadata, FilterName } from "@/lib/types";
 import { ShieldCheck } from "lucide-react";
@@ -104,37 +105,17 @@ export default function ExperimentsMainContent({
                          <div className="flex items-center gap-2">
                               <SelectorField
                                    placeholder="Բարդություն"
-                                   items={[
-                                        {
-                                             value: "starter",
-                                             label: "Սկսնակ"
-                                        },
-                                        {
-                                             value: "intermediate",
-                                             label: "Միջին"
-                                        },
-                                        {
-                                             value: "master",
-                                             label: "Մասնագիտացված"
-                                        }
-                                   ]}
+                                   items={Object.entries(DIFFICULTIES).map(([key,val])=>({
+                                        value: key,
+                                        label: val
+                                   }))}
                               />
                               <SelectorField
                                    placeholder="Տևողություն"
-                                   items={[
-                                        {
-                                             value: "short",
-                                             label: "<15ր"
-                                        },
-                                        {
-                                             value: "medium",
-                                             label: "15-30ր"
-                                        },
-                                        {
-                                             value: "long",
-                                             label: "1ժ+"
-                                        }
-                                   ]}
+                                   items={Object.entries(DURATIONS).map(([key,val])=>({
+                                        value: key,
+                                        label: val
+                                   }))}
                               />
                               <div className="rounded-md shadow-xs border bg-background p-2 flex justify-between items-center flex-1 dark:bg-input/30 dark:hover:bg-input/50 border-input aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50">
                                    <div className="flex items-center gap-2">

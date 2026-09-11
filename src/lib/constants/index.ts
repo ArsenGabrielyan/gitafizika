@@ -324,3 +324,15 @@ $E = mc^2$
 $\\vec{F} = m\\vec{a}$
 
 `.trim()
+
+export const DIFFICULTIES = {
+    starter: "Սկսնակ",
+    intermediate: "Միջին",
+    master: "Մասնագիտացված"
+} as const
+
+export const DURATIONS = {
+    short: "<15ր",
+    medium: "15-30ր",
+    long: "1ժ+"
+} as const

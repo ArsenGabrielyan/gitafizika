@@ -1,3 +1,4 @@
+import { TooltipProvider } from "@/components/ui/tooltip";
 import SingleExperimentContent from "@/contents/single-experiment";
 import { getAllSlugs, getExperimentBySlug, getRelatedExperiments } from "@/lib/helpers/experiments";
 import { createMetaAlternates } from "@/lib/utils";
@@ -38,10 +39,12 @@ export default async function SingleExperimentPage({params}: SingleExperimentPag
      if(!currExperiment) notFound();
      const relatedExperiments = await getRelatedExperiments(slug, currExperiment.tags)
      return (
-          <SingleExperimentContent
-               experiment={currExperiment}
-               related={relatedExperiments}
-               slug={slug}
-          />
+          <TooltipProvider>
+               <SingleExperimentContent
+                    experiment={currExperiment}
+                    related={relatedExperiments}
+                    slug={slug}
+               />
+          </TooltipProvider>
      )
 }

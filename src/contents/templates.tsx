@@ -1,5 +1,4 @@
 "use client"
-
 import SiteLayout from "@/components/layout"
 import PaginationWithLinks from "@/components/pagination-with-links"
 import { Button } from "@/components/ui/button"

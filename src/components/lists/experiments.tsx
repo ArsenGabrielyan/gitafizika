@@ -19,10 +19,9 @@ export default function ExperimentsList({experiments}: ExperimentsListProps){
           </Empty>
      ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-               <ExperimentCard/>
-               <ExperimentCard/>
-               <ExperimentCard/>
-               <ExperimentCard/>
+               {experiments.map(exp=>(
+                    <ExperimentCard key={exp.slug} data={exp}/>
+               ))}
           </div>
      )
 }

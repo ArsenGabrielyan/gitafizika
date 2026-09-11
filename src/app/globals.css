@@ -131,7 +131,4 @@
   html {
     @apply font-sans;
   }
-  .katex-html{
-    @apply hidden
-  }
 }
