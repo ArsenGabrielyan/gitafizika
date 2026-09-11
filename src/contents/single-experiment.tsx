@@ -1,10 +1,12 @@
 "use client"
-import ExperimentCard from "@/components/cards/experiment";
 import SiteLayout from "@/components/layout";
+import ExperimentsList from "@/components/lists/experiments";
 import { Badge } from "@/components/ui/badge";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { mdTest } from "@/lib/constants";
 import { absoluteURL } from "@/lib/utils";
+import MDXContent from "@/section/mdx-content";
 import { Share2 } from "lucide-react";
 
 interface SingleExperimentContentProps{
@@ -58,9 +60,7 @@ export default function SingleExperimentContent({slug}: SingleExperimentContentP
                                              <Share2/>
                                         </Button>
                                    </div>
-                                   <article className="prose dark:prose-invert max-w-none">
-                                        Այստեղ կտեղադրվեն MDX բովանդակություն
-                                   </article>
+                                   <MDXContent source={mdTest}/>
                               </div>
                          </div>
                          <h2 className="text-xl md:text-2xl lg:text-[27px] font-semibold border-b border-primary pb-1 mb-4 w-fit">Բանալի բառեր</h2>
@@ -70,12 +70,7 @@ export default function SingleExperimentContent({slug}: SingleExperimentContentP
                               <Badge>Կատեգորիա 3</Badge>
                          </div>
                          <h2 className="text-xl md:text-2xl lg:text-[27px] font-semibold border-b border-primary pb-1 mb-4 w-fit">Առնչվող փորձեր</h2>
-                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                         </div>
+                         <ExperimentsList experiments={[]}/>
                     </div>
                </section>
           </SiteLayout>

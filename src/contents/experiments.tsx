@@ -1,8 +1,8 @@
 "use client"
-import ExperimentCard from "@/components/cards/experiment";
 import SearchField from "@/components/fields/search";
 import SelectorField from "@/components/fields/selector";
 import SiteLayout from "@/components/layout";
+import ExperimentsList from "@/components/lists/experiments";
 import PaginationWithLinks from "@/components/pagination-with-links";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -80,16 +80,7 @@ export default function ExperimentsMainContent(){
                                    <Switch/>
                               </div>
                          </div>
-                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                              <ExperimentCard/>
-                         </div>
+                         <ExperimentsList experiments={[]}/>
                          <PaginationWithLinks
                               totalCount={32}
                               pageSize={8}

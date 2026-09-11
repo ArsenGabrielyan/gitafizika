@@ -1,6 +1,9 @@
+"use client"
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug'
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { useMDXComponents } from "@/mdx-components";
 
@@ -16,10 +19,11 @@ export default function MDXContent({source}: MDXContentProps){
                     components={components}
                     options={{
                          mdxOptions: {
-                              remarkPlugins: [remarkGfm],
+                              remarkPlugins: [remarkGfm, remarkMath],
                               rehypePlugins: [
-                                   rehypeAutolinkHeadings,
+                                   rehypeKatex,
                                    rehypeSlug,
+                                   rehypeAutolinkHeadings,
                               ],
                          }
                     }}

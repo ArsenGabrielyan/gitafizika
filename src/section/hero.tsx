@@ -15,7 +15,7 @@ export default function HeroSection(){
                               <Link href="/#about">Իմանալ ավելին</Link>
                          </Button>
                          <Button variant="secondary" asChild>
-                              <Link href="https://youtube.com/playlist?list=PLSI6KSDJfq-J6OxBprsyMjWmmLym2o7T3" target="_blank" rel="noopener noreferrer nofollower">
+                              <Link href="https://youtube.com/playlist?list=PLSI6KSDJfq-J6OxBprsyMjWmmLym2o7T3" target="_blank" rel="noopener noreferrer nofollow">
                                    <PlayCircle/>
                                    Դիտել Փլեյլիստը
                               </Link>

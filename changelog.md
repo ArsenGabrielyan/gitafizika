@@ -5,8 +5,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ---
 ## 0.3.0 - Unreleased
+### Added
+- Empty component for experiments as a fallback state
 ### Initialized
-- MDX support
+- MDX support with LATEX plugin
+- MDX content example
 
 ## 0.2.0 - 2026-09-08
 ### Added
