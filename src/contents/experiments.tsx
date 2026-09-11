@@ -8,22 +8,24 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { DIFFICULTIES, DURATIONS } from "@/lib/constants";
-import { FILTER_NAMES } from "@/lib/constants/filters";
-import { ExperimentMetadata, FilterName } from "@/lib/types";
+import { EXPERIMENT_FILTER_NAMES, ExperimentFilterName } from "@/lib/constants/filters";
+import { ExperimentMetadata } from "@/lib/types";
 import { ShieldCheck } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 interface ExperimentsMainContentProps {
      initialQuery?: string
-     initialCategory?: FilterName
+     initialCategory?: ExperimentFilterName
+     initialDifficulty?: keyof typeof DIFFICULTIES
+     initialDuration?: keyof typeof DURATIONS
+     initialSelfGuided?: boolean
      experiments: ExperimentMetadata[]
      pageSize: number
      currPage: number
-     categoryCounts: Record<FilterName, number>
+     categoryCounts: Record<ExperimentFilterName, number>
      totalResults: number
      allCount: number
-     
 }
 export default function ExperimentsMainContent({
      experiments,
@@ -33,12 +35,18 @@ export default function ExperimentsMainContent({
      totalResults,
      allCount,
      initialQuery,
-     initialCategory
+     initialCategory,
+     initialDifficulty,
+     initialDuration,
+     initialSelfGuided
 }: ExperimentsMainContentProps){
      const router = useRouter()
      const pathname = usePathname()
-     const [input, setInput] = useState(initialQuery || "")
-     const [currFilter, setCurrFilter] = useState<"all" | FilterName>(initialCategory || "all")
+     const [input, setInput] = useState(initialQuery ?? "")
+     const [currFilter, setCurrFilter] = useState<"all" | ExperimentFilterName>(initialCategory ?? "all")
+     const [difficulty, setDifficulty] = useState(initialDifficulty)
+     const [duration, setDuration] = useState(initialDuration)
+     const [selfGuided, setSelfGuided] = useState(initialSelfGuided ?? false)
      function handleSearch(value: string) {
           setInput(value)
           const params = new URLSearchParams(window.location.search)
@@ -52,15 +60,59 @@ export default function ExperimentsMainContent({
                scroll: false
           })
      }
-     function handleFilter(filter: "all" | FilterName) {
+     function handleFilter(filter: "all" | ExperimentFilterName) {
           setCurrFilter(filter)
+
           const params = new URLSearchParams(window.location.search)
           params.set("page", "1")
+
           if (filter === "all") {
                params.delete("category")
           } else {
                params.set("category", filter)
           }
+
+          router.push(`${pathname}?${params.toString()}`, {
+               scroll: false
+          })
+     }
+
+     function handleDifficulty(value: keyof typeof DIFFICULTIES) {
+          setDifficulty(value)
+
+          const params = new URLSearchParams(window.location.search)
+          params.set("page", "1")
+          params.set("difficulty", value)
+
+          router.push(`${pathname}?${params.toString()}`, {
+               scroll: false
+          })
+     }
+
+     function handleDuration(value: keyof typeof DURATIONS) {
+          setDuration(value)
+
+          const params = new URLSearchParams(window.location.search)
+          params.set("page", "1")
+          params.set("duration", value)
+
+          router.push(`${pathname}?${params.toString()}`, {
+               scroll: false
+          })
+     }
+
+     function handleSelfGuided(value: boolean) {
+          setSelfGuided(value)
+
+          const params = new URLSearchParams(window.location.search)
+          params.set("page", "1")
+
+          if (value) {
+               params.set("selfGuided", "true")
+          } else {
+               params.delete("selfGuided")
+          }
+
           router.push(`${pathname}?${params.toString()}`, {
                scroll: false
           })
@@ -85,8 +137,8 @@ export default function ExperimentsMainContent({
                               >
                                    Բոլորը ({allCount})
                               </Button>
-                              {Object.entries(FILTER_NAMES).map(([key, value]) => {
-                                   const filter = key as FilterName
+                              {Object.entries(EXPERIMENT_FILTER_NAMES).map(([key, value]) => {
+                                   const filter = key as ExperimentFilterName
                                    return (
                                         <Button
                                              key={filter}
@@ -105,6 +157,8 @@ export default function ExperimentsMainContent({
                          <div className="flex items-center gap-2">
                               <SelectorField
                                    placeholder="Բարդություն"
+                                   value={difficulty}
+                                   onChange={val=>handleDifficulty(val as keyof typeof DIFFICULTIES)}
                                    items={Object.entries(DIFFICULTIES).map(([key,val])=>({
                                         value: key,
                                         label: val
@@ -112,6 +166,8 @@ export default function ExperimentsMainContent({
                               />
                               <SelectorField
                                    placeholder="Տևողություն"
+                                   value={duration}
+                                   onChange={val=>handleDuration(val as keyof typeof DURATIONS)}
                                    items={Object.entries(DURATIONS).map(([key,val])=>({
                                         value: key,
                                         label: val
@@ -124,7 +180,11 @@ export default function ExperimentsMainContent({
                                              Միայն ինքնուրույն կատարվող
                                         </Label>
                                    </div>
-                                   <Switch/>
+                                   <Switch
+                                        id="self-guided"
+                                        checked={selfGuided}
+                                        onCheckedChange={handleSelfGuided}
+                                   />
                               </div>
                          </div>
                          <ExperimentsList experiments={experiments}/>

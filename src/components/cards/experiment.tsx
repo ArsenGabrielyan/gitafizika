@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Card, CardHeader, CardAction, CardTitle, CardDescription, CardFooter } from "../ui/card";
 import { ExperimentMetadata } from "@/lib/types";
 import Link from "next/link";
+import { EXPERIMENT_FILTER_NAMES } from "@/lib/constants/filters";
 
 interface ExperimentCardProps{
      data: ExperimentMetadata
@@ -20,7 +21,7 @@ export default function ExperimentCard({data}: ExperimentCardProps){
                />
                <CardHeader>
                     <CardAction>
-                         <Badge variant="secondary">{data.categories[0]}</Badge>
+                         <Badge variant="secondary">{EXPERIMENT_FILTER_NAMES[data.categories[0]]}</Badge>
                     </CardAction>
                     <CardTitle>{data.title}</CardTitle>
                     <CardDescription>{data.description}</CardDescription>

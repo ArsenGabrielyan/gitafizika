@@ -13,6 +13,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Empty component for experiments as a fallback state
 ### Changed
 - Added working pagination and filtering on the experiments page
+- Split filters into two:
+  - Templates filter
+  - Experiments filter
+- Refactored and optimized the single experiment page
 ### New Experiments
 - Elephant toothpaste
 

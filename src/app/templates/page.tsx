@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import TemplatesMainContent from "../../contents/templates";
 import { getTemplatesFromCDN } from "@/lib/helpers/templates";
-import { FilterName } from "@/lib/types";
-import { FILTER_NAMES } from "@/lib/constants/filters";
+import { TEMPLATE_FILTER_NAMES, TemplateFilterName } from "@/lib/constants/filters";
 
 export const metadata: Metadata = {
      title: "Շաբլոններ"
@@ -17,7 +16,7 @@ export default async function TemplatesMainPage({
           page?: string;
           pageSize?: string;
           query?: string,
-          category?: FilterName
+          category?: TemplateFilterName
      }>;
 }){
      const params = await searchParams;
@@ -30,8 +29,8 @@ export default async function TemplatesMainPage({
           ? requestedPageSize
           : 8;
 
-     const category = params.category && Object.hasOwn(FILTER_NAMES, params.category)
-          ? params.category as FilterName
+     const category = params.category && Object.hasOwn(TEMPLATE_FILTER_NAMES, params.category)
+          ? params.category as TemplateFilterName
           : undefined
 
      const query = params.query?.trim().toLowerCase() ?? ""
@@ -45,8 +44,8 @@ export default async function TemplatesMainPage({
      )
 
      const categoryCounts = Object.fromEntries(
-          Object.keys(FILTER_NAMES).map(key => {
-               const category = key as FilterName
+          Object.keys(TEMPLATE_FILTER_NAMES).map(key => {
+               const category = key as TemplateFilterName
 
                return [
                     category,
@@ -55,7 +54,7 @@ export default async function TemplatesMainPage({
                     ).length
                ]
           })
-     ) as Record<FilterName, number>
+     ) as Record<TemplateFilterName, number>
 
      const totalResults = filteredTemplates.length
      const totalPages = Math.max(1, Math.ceil(totalResults / pageSize))

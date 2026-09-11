@@ -4,10 +4,10 @@ import PaginationWithLinks from "@/components/pagination-with-links"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import SearchField from "@/components/fields/search"
-import { FilterName, Template } from "@/lib/types"
+import { Template } from "@/lib/types"
 import TemplatesList from "@/components/lists/templates"
 import { toast } from "sonner"
-import { FILTER_NAMES } from "@/lib/constants/filters"
+import { TEMPLATE_FILTER_NAMES, TemplateFilterName } from "@/lib/constants/filters"
 import { usePathname, useRouter } from "next/navigation"
 
 interface TemplatesMainContentProps {
@@ -15,11 +15,11 @@ interface TemplatesMainContentProps {
      pageSize: number
      currPage: number
      error?: string
-     categoryCounts: Record<FilterName, number>
+     categoryCounts: Record<TemplateFilterName, number>
      totalResults: number
      allCount: number
      initialQuery?: string
-     initialCategory?: FilterName
+     initialCategory?: TemplateFilterName
 }
 
 export default function TemplatesMainContent({
@@ -36,7 +36,7 @@ export default function TemplatesMainContent({
      const router = useRouter()
      const pathname = usePathname()
      const [input, setInput] = useState(initialQuery || "")
-     const [currFilter, setCurrFilter] = useState<"all" | FilterName>(initialCategory || "all")
+     const [currFilter, setCurrFilter] = useState<"all" | TemplateFilterName>(initialCategory || "all")
      useEffect(() => {
           if (error) toast.error(error)
      }, [error])
@@ -53,7 +53,7 @@ export default function TemplatesMainContent({
                scroll: false
           })
      }
-     function handleFilter(filter: "all" | FilterName) {
+     function handleFilter(filter: "all" | TemplateFilterName) {
           setCurrFilter(filter)
           const params = new URLSearchParams(window.location.search)
           params.set("page", "1")
@@ -90,8 +90,8 @@ export default function TemplatesMainContent({
                               >
                                    Բոլորը ({allCount})
                               </Button>
-                              {Object.entries(FILTER_NAMES).map(([key, value]) => {
-                                   const filter = key as FilterName
+                              {Object.entries(TEMPLATE_FILTER_NAMES).map(([key, value]) => {
+                                   const filter = key as TemplateFilterName
                                    return (
                                         <Button
                                              key={filter}

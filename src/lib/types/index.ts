@@ -1,5 +1,5 @@
 import { LucideIcon } from "lucide-react";
-import { FILTER_NAMES } from "../constants/filters";
+import { ExperimentFilterName, TemplateFilterName } from "../constants/filters";
 
 export interface SelectType{
      value: string,
@@ -7,13 +7,12 @@ export interface SelectType{
      Icon?: LucideIcon,
      disabled?: boolean
 }
-export type FilterName = keyof typeof FILTER_NAMES;
 export interface Template {
      slug: string;
      title: string;
      file: string;
      thumbnail: string;
-     categories: FilterName[];
+     categories: TemplateFilterName[];
      pages: number;
 }
 // TODO: Translate blockquote variants initially into Armenian
@@ -28,7 +27,7 @@ export interface ExperimentMetadata {
      title: string
      description: string
      thumbnail: string
-     categories: FilterName[]
+     categories: ExperimentFilterName[]
      tags: string[]
      difficulty: "starter" | "intermediate" | "master"
      duration: "short" | "medium" | "long"
@@ -41,4 +40,7 @@ export interface ExperimentMetadata {
 }
 export interface Experiment extends ExperimentMetadata{
      content: string,
+}
+export interface SingleExperimentComponentProps{
+     experiment: ExperimentMetadata
 }

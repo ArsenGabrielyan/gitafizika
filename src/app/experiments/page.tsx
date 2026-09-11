@@ -1,8 +1,8 @@
 import { Metadata } from "next"
 import ExperimentsMainContent from "../../contents/experiments"
-import { FilterName } from "@/lib/types";
 import { getAllExperiments } from "@/lib/helpers/experiments";
-import { FILTER_NAMES } from "@/lib/constants/filters";
+import { EXPERIMENT_FILTER_NAMES, ExperimentFilterName } from "@/lib/constants/filters";
+import { DIFFICULTIES, DURATIONS } from "@/lib/constants";
 
 export const metadata: Metadata = {
      title: "Գիտական փորձեր"
@@ -17,7 +17,10 @@ export default async function ExperimentsMainPage({
           page?: string;
           pageSize?: string;
           query?: string,
-          category?: FilterName
+          category?: ExperimentFilterName
+          difficulty?: keyof typeof DIFFICULTIES
+          duration?: keyof typeof DURATIONS
+          selfGuided?: string
      }>;
 }){
      const params = await searchParams;
@@ -30,8 +33,8 @@ export default async function ExperimentsMainPage({
           ? requestedPageSize
           : 8;
 
-     const category = params.category && Object.hasOwn(FILTER_NAMES, params.category)
-          ? params.category as FilterName
+     const category = params.category && Object.hasOwn(EXPERIMENT_FILTER_NAMES, params.category)
+          ? params.category as ExperimentFilterName
           : undefined
 
      const query = params.query?.trim().toLowerCase() ?? ""
@@ -41,13 +44,15 @@ export default async function ExperimentsMainPage({
      )
 
      const filteredExperiments = searchResults.filter(item =>
-          !category || item.categories.includes(category)
+          (!params.category || item.categories.includes(params.category)) &&
+          (!params.difficulty || item.difficulty === params.difficulty) &&
+          (!params.duration || item.duration === params.duration) &&
+          (!params.selfGuided || item.selfGuided)
      )
 
      const categoryCounts = Object.fromEntries(
-          Object.keys(FILTER_NAMES).map(key => {
-               const category = key as FilterName
-
+          Object.keys(EXPERIMENT_FILTER_NAMES).map(key => {
+               const category = key as ExperimentFilterName
                return [
                     category,
                     searchResults.filter(item =>
@@ -55,7 +60,7 @@ export default async function ExperimentsMainPage({
                     ).length
                ]
           })
-     ) as Record<FilterName, number>
+     ) as Record<ExperimentFilterName, number>
 
      const totalResults = filteredExperiments.length
      const totalPages = Math.max(1, Math.ceil(totalResults / pageSize))
@@ -77,6 +82,9 @@ export default async function ExperimentsMainPage({
                allCount={searchResults.length}
                initialCategory={category}
                initialQuery={params.query}
+               initialDifficulty={params.difficulty}
+               initialDuration={params.duration}
+               initialSelfGuided={params.selfGuided === "true"}
           />
      )
 }

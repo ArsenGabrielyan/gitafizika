@@ -1,4 +1,3 @@
-"use client"
 import "katex/contrib/mhchem";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import remarkGfm from 'remark-gfm'
